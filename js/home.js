@@ -58,8 +58,8 @@ const context = canvas.getContext("2d");
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-var imageWidth = window.innerWidth
-var imageHeight = 1080*window.innerHeight/1920
+var imageWidth = window.innerWidth*2/3
+var imageHeight = 1080*imageWidth/1920
 
 window.addEventListener('resize', function() {
     console.log("resized")
