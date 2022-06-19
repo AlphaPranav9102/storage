@@ -15,7 +15,7 @@
         <meta name="google-site-verification" content="dCfBdBGX9odX6CjYJ0gxzFrNT9HOr5RVIX00493lf2A"/>
     </head>
 
-    <body class="">
+    <body class="" onload="document.body.style.opacity='1'">
         <div class="h-screen bg-black">
             <nav class="border-gray-200 px-2 sm:px-4 py-3 bg-black">
                 <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -59,13 +59,69 @@
                 </h3>
                 <button type="button" class="mr-2 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-semibold rounded-lg text-xl px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-600 inline" style="background-color:#efae04">About Us</button>
                 <button type="button" class="ml-2 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-semibold rounded-lg text-xl px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-600 inline" style="background-color:#efae04">Camps</button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="animate-bounce h-12 w-12 mt-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="white">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path>
+				</svg>
             </div>
         </div>
 
         <div id="robotAnimationSpace" class="bg-black">
-            <h2 id="robotName" style="text-align:center;"class="z-20 text-5xl lg:text-7xl md:text-5xl sm:text-4xl font-bold pt-24 text-white">Kestrel</h2>
-            <canvas id="robotAnimationCanvas" class="z-10 w-full h-screen"></canvas>
+            <h1 class="text-5xl lg:text-7xl md:text-5xl sm:text-5xl font-bold text-center" style="color:#ffffff">Introducting
+                <span class="text-transparent bg-clip-text bg-gradient-to-b from-orange-500 to-yellow-300">
+                    Kestral
+                </span>
+            </h1>
+            <canvas id="robotAnimationCanvas" class="w-1/2 h-screen float-left"></canvas>
+            <div class="float-right w-1/2">
+                <div id="intakeName">
+                    <h2 class="z-20  text-4xl lg:text-6xl md:text-5xl sm:text-3xl font-bold pt-24 text-white float-right w-full">
+                        Intake
+                    </h2>
+                    <p class="z-20 w-2/3 text-xl lg:text-2xl md:text-2xl sm:text-lg font-medium pt-10 text-white float-left w-full">
+                        Flexible, pneumatics-based intake with four bar actuation and an automated LED system for count of cargo.
+                    </p>
+                </div>
+                <div id="climberName">
+                    <h2 class="z-20  text-4xl lg:text-6xl md:text-5xl sm:text-3xl font-bold pt-24 text-white float-right w-full">
+                        Climber
+                    </h2>
+                    <p class="z-20 w-2/3 text-xl lg:text-2xl md:text-2xl sm:text-lg font-medium pt-10 text-white float-left w-full">
+                        Two telescoping arms and two pivoting arms climber for traversal rung. Achieved a consistent automated climb under 12 seconds.
+                    </p>
+                </div>
+                <div id="shooterName">
+                    <h2 class="z-20  text-4xl lg:text-6xl md:text-5xl sm:text-3xl font-bold pt-24 text-white float-right w-full">
+                        Shooter
+                    </h2>
+                    <p class="z-20 w-2/3 text-xl lg:text-2xl md:text-2xl sm:text-lg font-medium pt-10 text-white float-left w-full">
+                        Fixed-position shooter hood designed for fender shots. Reaches 45 feet high at full power.
+                    </p>
+                </div>
+                <div id="drivetrainName">
+                    <h2 class="z-20  text-4xl lg:text-6xl md:text-5xl sm:text-3xl font-bold pt-24 text-white float-right w-full">
+                        Drivetrain
+                    </h2>
+                    <p class="z-20 w-2/3 text-xl lg:text-2xl md:text-2xl sm:text-lg font-medium pt-10 text-white float-left w-full">
+                        MK4i flipped swerve modules with a L2 gear ratio, drivetrain with low center of gravity for good defense.
+                    </p>
+                </div>
+                <div id="upcomingName">
+                    <h2 class="z-20  text-4xl lg:text-6xl md:text-5xl sm:text-3xl font-bold pt-24 text-white float-right w-full">
+                        Upcoming
+                    </h2>
+                    <p class="z-20 w-2/3 text-xl lg:text-2xl md:text-2xl sm:text-lg font-medium pt-10 text-white float-left w-full">
+                        Watch us compete at IRI on May 17th - 18th and at Chezy Champs on Sept 24th - 25th.
+                    </p>
+                </div>
             </div>
-        <script src="/js/home.js" type="module"></script>
+        </div>
+        <script src="/js/home.js"></script>
     </body>
+    <style>
+        body{ 
+            opacity: 0;
+            transition: opacity 2s;
+            -webkit-transition: opacity 2s; /* Safari */
+        }
+    </style>
 </html>
