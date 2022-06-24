@@ -3,66 +3,105 @@ layout: page
 title: About - Our Team
 ---
 
-<h2>Our Team</h2>
-<div class="row">
-    <blockquote class="blockquote text-center">
-        <p class="mb-0">Team 4099 strives to create an inclusive learning community where students can apply their knowledge of Science, Technology, Engineering, Art, and Math (STEAM) to real-world problems.</p>
-        <hr>
-    </blockquote>
-</div>
+<div class="w-4/5 mx-auto">
+    <div class="border-b-2 border-gray-500 pb-4 pt-4">
+        <h2 class="text-4xl font-semibold mb-4 text-[#efae04]">Our Team</h2>
+        <p class="text-xl text-center text-white">Team 4099 strives to create an inclusive learning community where students can apply their knowledge of Science, Technology, Engineering, Art, and Math (STEAM) to real-world problems.</p>
+    </div>
 
-<div class="row justify-content-center">
-    <div id="carouselExampleControls" class="carousel slide col-md-8" data-ride="carousel">
-        <div class="carousel-inner">
-            {% assign image_files = site.static_files | where: "gallery",true %}
-            {% for image in image_files %}
-                {% if image.path contains 'img/gallery' %}
-                    {% if forloop.first == true %}             
-                        <div class="carousel-item active">
-                    {% else %}
-                        <div class="carousel-item">                            
-                    {% endif %}                    
-                        <img class="d-block w-100" src="{{ image.path }}" alt="{{ image.basename }}">
-                    </div>
-                {% endif %}            
-            {% endfor %}
+    <div class="w-full border-b-2 border-gray-500">
+        <div id="default-carousel" class="w-2/3 mx-auto relative pb-4 pt-4" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="overflow-hidden relative h-72 rounded-lg sm:h-84 xl:h-84 2xl:h-96">
+                {% assign image_files = site.static_files | where: "gallery",true %}
+                {% for image in image_files %}
+                    {% if image.path contains 'img/gallery' %}
+                        {% if forloop.first == true %}             
+                            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="">
+                                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                                <img src="{{ image.path }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="{{ image.basename }}">
+                            </div>
+                        {% else %}
+                            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10" data-carousel-item="">
+                                <img src="{{ image.path }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="{{ image.basename }}">
+                            </div>                           
+                        {% endif %}
+                    {% endif %}            
+                {% endfor %}
+            </div>
+            <!-- Slider indicators -->
+            <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button type="button" class="w-3 h-3 rounded-full bg-white dark:bg-gray-800" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev="">
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <span class="hidden">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next="">
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span class="hidden">Next</span>
+                </span>
+            </button>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+    </div>
+
+    <div class=" grid grid-cols-3 border-gray-200 pb-8 pt-8">
+        <div class="col-span-1 text-3xl font-semibold text-white">
+            Team Goals
+        </div>
+        <div class="col-span-2 text-md inline text-white">
+            <p class="mb-4 font-semibold">Team 4099 has four primary goals:</p>
+            <ol class="list-decimal list-inside ml-2 mb-4">
+                <li>Increasing STEM awareness in our community (Poolesville, and eventually all of Montgomery County),</li>
+                <li>Removing barriers to STEM interest for underrepresented groups,</li>
+                <li>Readying our students for college and the workforce, and </li>
+                <li>Ensuring that our students have fun and make friends while doing so.</li>
+            </ol>
+            <p>
+                Everything that the team does is directly intended to address at least one of these goals, from competing in the FIRST 
+                Robotics Competition to hosting team kickball games to starting RoboCamps in Montgomery County.
+            </p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-3 border-gray-200 pb-8 pt-4">
+        <div class="col-span-1 text-3xl font-semibold text-white">
+            History
+        </div>
+        <div class="col-span-2 text-md inline text-white">
+            <p class="mb-4">Team 4099 was first founded in 2012 at Poolesville High School by a group of students in the Science, Math, and Computer 
+                Science Magnet program. These students wanted to have the opportunity to build robots and compete in the FIRST Robotics 
+                Competition. The students raised funds, recruited staff mentors, and formed a team of dedicated students to compete in 
+                their rookie year. The team's Rebound Rumble robot was highly capable, and the team's strategy impressed judges enough to
+                win the team the Rookie All-Star award at the Washington D.C. Regional that year. The team then attended the FIRST 
+                Championship in St. Louis, finishing in the middle of the pack in a strong Galileo division. 
+            </p>
+            <p class="mb-4">Since that year, Team 4099 has been working hard on meeting our three goals. The team worked hard on improving our on-field
+                performance consistency and performance, steadily building team knowledge on how to build a successful robot. The team's 
+                strategic design improved, as did the quality of the engineering on the robot. In the 2016 season, the team won the 
+                Innovation in Control award at one of our district events for developing a unique Linux driver for the Microsoft Kinect. 
+                Additional improvement manifested itself in the 2018 FIRST Robotics season, in which Team 4099 made the elimination 
+                rounds at both of its district events and advanced to the FIRST Championship in Detroit.
+            </p>
+            <p class="mb-4">Over the last eight years, the team has not only improved the engineering, but also made great progress on outreach and 
+                fundraising. Most of this progress was made in a huge jump in the 2018 season, with the team budget in 2018 at $50,000, 
+                compared to the $6,000 from just the previous year. Additionally, in 2018, Team 4099 began its most ambitious outreach 
+                project, RoboCamps. These major jumps have prepared the team to have even more success going forward.
+            </p>
+            <p class="mb-4">In 2019, Team 4099 built their most advanced robot yet. The team did better than they ever have in the qualifications events, and made it to the District Championship for the first time.
+                They had another successful year of RoboCamps, this year launching a advanced version of the camps which many campers and parents loved.
+            </p>
+        </div>
     </div>
 </div>
 
-<div class="row">
-        <!-- STEPS -->
-</div>
-<div class="row">
-    
-</div>
-<div class="row">
-    <div class="col col-sm-2">
-        <br>
-        <h3>Team Goals</h3>
-    </div>
-    
-    <div class="col col-sm-10">
-        <br>
-        <p>Team 4099 has four primary goals:</p>
-        <ol>
-            <li>Increasing STEM awareness in our community (Poolesville, and eventually all of Montgomery County),</li>
-            <li>Removing barriers to STEM interest for underrepresented groups,</li>
-            <li>Readying our students for college and the workforce, and </li>
-            <li>Ensuring that our students have fun and make friends while doing so.</li>
-        </ol>
-        <p>Everything that the team does is directly intended to address at least one of these goals, from competing in the FIRST 
-            Robotics Competition to hosting team kickball games to starting RoboCamps in Montgomery County.</p>
-    </div>    
-</div>
+<!--
 
 <br><br>
 <div class="row">
@@ -101,3 +140,5 @@ title: About - Our Team
 <div class="row">
     
 </div>
+
+-->

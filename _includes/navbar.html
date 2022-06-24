@@ -1,58 +1,90 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #1b1f22;">
-    <a class="navbar-brand" href="/">
-        <img src="/img/logo.svg" class="d-inline-block align-top navbar-logo" alt="Team 4099">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    About
-                </a>
-                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <a class="dropdown-item" href="/about/">Our Team</a>
-                    <a class="dropdown-item" href="/about/robots">Our Robots</a>
-                    <a class="dropdown-item" href="/about/mentors">Mentors</a>
+<nav class="border-gray-200 px-2 sm:px-4 py-3 bg-black">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+        <a href="/" class="flex items-center">
+            <img src="/img/gearLogo.svg" class="mr-3 h-10 sm:h-12" alt="Flowbite Logo">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Team 4099</span>
+        </a>
+        <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">\
+                <li id="dropdownDefault" data-dropdown-toggle="dropdownAbout">
+                    <a href="#" class="block text-lg font-semibold py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#efae04] md:p-0">About &#9660</a>
+                </li>
+                <div id="dropdownAbout" class="z-10 hidden divide-y divide-gray-100 rounded shadow w-44 bg-black border border-gray-200 border-2">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                      <li>
+                        <a href="/about/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Our Team</a>
+                      </li>
+                      <li>
+                        <a href="/about/robots/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Our Robots</a>
+                      </li>
+                      <li>
+                        <a href="/about/mentors/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mentors</a>
+                      </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/programs/camps">Camps</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Programs
-                </a>
-                <div class="dropdown-menu" aria-labelledby="programsDropdown">
-                    <a class="dropdown-item" href="/programs/frc">FRC</a>
-                    <a class="dropdown-item" href="/programs/girlscouts">RoboBadge</a>
+                <li>
+                    <a href="#" class="block text-lg font-semibold py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#efae04] md:p-0">Camps</a>
+                </li>
+                <li id="dropdownDefault" data-dropdown-toggle="dropdownPrograms">
+                    <a href="#" class="block text-lg font-semibold py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#efae04] md:p-0">Programs &#9660</a>
+                </li>
+                <div id="dropdownPrograms" class="z-10 hidden divide-y divide-gray-100 rounded shadow w-44 bg-black border border-gray-200 border-2">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">FRC</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">RoboBadge</a>
+                      </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="learnDropdown" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Resources
-                </a>
-                <div class="dropdown-menu" aria-labelledby="learnDropdown">
-                    <a class="dropdown-item" href="/learn/business">Business</a>
-                    <a class="dropdown-item" href="/learn/design">Design</a>
-                    <a class="dropdown-item" href="/learn/electrical">Electrical</a>
-                    <a class="dropdown-item" href="/learn/mechanical">Mechanical</a>
-                    <a class="dropdown-item" href="/learn/programming">Programming</a>
+                <li id="dropdownDefault" data-dropdown-toggle="dropdownResources">
+                    <a href="#" class="block text-lg font-semibold py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#efae04] md:p-0">Resources &#9660</a>
+                </li>
+                <div id="dropdownResources" class="z-10 hidden divide-y divide-gray-100 rounded shadow w-44 bg-black border border-gray-200 border-2">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Business</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Electrical</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mechanical</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Programming</a>
+                      </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/supportus">Support Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-
-            &nbsp;&nbsp;
-
-        </ul>
+                <li id="dropdownDefault" data-dropdown-toggle="dropdownMore">
+                    <a href="#" class="block text-lg font-semibold py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#efae04] md:p-0">Other &#9660</a>
+                </li>
+                <div id="dropdownMore" class="z-10 hidden divide-y divide-gray-100 rounded shadow w-44 bg-black border border-gray-200 border-2">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Support Us</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog</a>
+                      </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
     </div>
 </nav>

@@ -1,77 +1,71 @@
 <html lang="en">
-    
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/img/favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/img/favicon.ico">
 
-    <title>{{ page.title }} - Team 4099</title>
+        <title>{{ page.title }} - Team 4099</title>
+                
+        {% include topImports.html %}
+    </head>
 
-    <!-- Custom styles for this template -->
-    <script src="https://use.fontawesome.com/7124f2cd3d.js"></script>
-            
-    {% include topImports.html %}
-</head>
+    <body>
+        <header>
+            {% include navbar.html %}
+        </header>
 
-<body>
-    <header>
-        {% include navbar.html %}
-    </header>
-    <div class="container">        
-        <h2>{{ page.title }}</h2>
-        <hr>
-        <h3>The Challenge: <em>{{ page.competition_name }}</em></h3>
-        <br>
-        <div class="row justify-content-center">
-            <div class="col-md-8 embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="{{ page.competition_video }}" frameborder="0" allowfullscreen></iframe>                                
+        <div class="w-full bg-black text-white">
+            <div class="w-4/5 mx-auto">
+                <div class="pb-8 pt-4">
+                    <h1 class="text-4xl pb-2 font-semibold mb-4 text-[#efae04] border-b-2 border-gray-500">{{ page.title }}</h2>
+                    <h2 class="text-3xl">The Challenge: <em>{{ page.competition_name }}</em></h2>
+                </div>
+                <div class="w-2/3 mx-auto">
+                    <iframe class="w-full aspect-video" src="{{ page.competition_video }}" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="w-full pt-8 pb-8 border-b-2 border-gray-500">
+                    <em>{{ page.competition_name }}</em> {{ page.competition_summary | textilize }} More information can be found on <a href='{{ page.competition_summary_url }}' class="text-blue-300" target=_blank>{{ page.competition_summary_provider }}</a></em>.
+                </div>
+                <div class="mt-8 grid grid-cols-3 pb-8">
+                    <div class="col-span-1 px-4">
+                        <h3 class="text-2xl pb-4">Our Robot</h3>
+                        <img class="w-full rounded-lg" src="{{ page.image_url }}" alt="2017 Robot">
+                    </div>
+                    <div class="col-span-1 px-4">
+                        <h3 class="text-2xl pb-4">Robot Specs</h3>
+                        <div class="mb-1">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 float-left mt-1">Name:</span>
+                            <p> {{ page.robot_name }}</p>
+                        </div>
+                        <div class="mb-1">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 float-left mt-1">Weight:</span>
+                            <p> {{ page.robot_weight }} lbs</p>
+                        </div>
+                        <div class="mb-1">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 float-left mt-1">Size:</span>
+                            <p>  {{ page.robot_width }}" W x {{ page.robot_length }}" L x {{ page.robot_height }}" H</p>
+                        </div>
+                        <div>
+                            <ol class="list-disc line-inside pl-4">
+                                {% for fact in page.quick_facts %}
+                                <li> {{ fact }} </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-span-1 px-4">
+                        <h3 class="text-2xl pb-4">Competition History</h3>
+                        {% for competition in page.competitions %}
+                            <div class="mb-1">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900 float-left mt-1">{{ competition[0] }}</span>
+                                <p> {{ competition[1] }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-xs-12">
-                <br>
-                <em>{{ page.competition_name }}</em> {{ page.competition_summary | textilize }} More information can be found on <a href='{{ page.competition_summary_url }}' target=_blank>{{ page.competition_summary_provider }}</a></em>.
-            </div>
-        </div>
-        <br>
-        <hr>
-        <div class="row">
-            <div class="col-md-4 col-xs-12">             
-                <h4>Our Robot</h4><br>           
-                <img class="img-fluid" src="{{ page.image_url }}" alt="2017 Robot">
-            </div>       
-            <div class="col-md-4 col-md-offset-1 col-xs-12">
-                <h4>Robot Specs</h4><br>
-                <ul class="list-unstyled">
-                    <li><span class='label label-info label-team'>Name:</span> {{ page.robot_name }}</li>
-                    <li><span class='label label-info label-team'>Weight:</span> {{ page.robot_weight }} lbs</li>
-                    <li><span class='label label-info label-team'>Size:</span> {{ page.robot_width }}" W x {{ page.robot_length }}" L x {{ page.robot_height }}" H</li>
-                    {% for fact in page.quick_facts %}
-                    <li> {{ fact }} </li>
-                    {% endfor %}
-                </ul>      
-            </div>
-            <div class="col-md-4 col-md-offset-1 col-xs-12">
-                <h4>Competition History</h4><br>
-                <ul class="list-unstyled">
-                    {% for competition in page.competitions %}
-                        <li><span class='label label-info label-team'>{{ competition[0] }}</span> {{ competition[1] }} </li>
-                    {% endfor %}
-                </ul>      
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">{% include footerContents.html %}</span>
-        </div>
-    </footer>
-
-    {% include bottomImports.html %}
-
-</body>
-    
+    </body>
 </html>
